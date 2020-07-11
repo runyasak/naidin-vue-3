@@ -1,5 +1,7 @@
 declare module '*.vue' {
-  import Vue from 'vue';
+  import { Component } from 'vue';
 
-  export default Vue;
+  // eslint-disable-next-line vars-on-top, no-var
+  var component: Component;
+  export default component;
 }
