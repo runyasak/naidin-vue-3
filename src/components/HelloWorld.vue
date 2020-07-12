@@ -34,13 +34,18 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+<script>
+import { defineComponent } from 'vue';
 
-@Component
-export default class HelloWorld extends Vue {
-  @Prop() private msg!: string;
-}
+export default defineComponent({
+  props: {
+    msg: {
+      type: String,
+      default: 'Hello',
+    },
+  },
+  name: 'HelloWorld',
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
