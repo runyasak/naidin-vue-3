@@ -8,14 +8,23 @@
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
+<script lang="ts">
+import { defineComponent } from 'vue'
 import HelloWorld from '@/components/HelloWorld.vue'
+import useFetchDbJson from '@/composables/useFetchDbJson'
+import bookJson from '../book.json'
 
-export default {
-  name: 'Home',
+export default defineComponent({
+  name: 'HomePage',
   components: {
     HelloWorld
+  },
+  setup() {
+    const books = useFetchDbJson(bookJson)
+
+    return {
+      books
+    }
   }
-}
+})
 </script>
